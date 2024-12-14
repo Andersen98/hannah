@@ -15,13 +15,6 @@ $env.config.rm.always_trash = true
 $env.config.recursion_limit = 50
 
 
-# ---------------------------
-# Commandline Editor Settings
-# ---------------------------
-edit_mode: "vi"
-buffer_editor: "editor"
-$env.config.cursor_shape.vi_insert = "line" 
-$env.config.cursor_shape.vi_normal = "blink_block"
 
 
 # --------------------
@@ -38,3 +31,6 @@ $env.config.completions.partial = true
 $env.config.completions.use_ls_colors = true
 
 
+
+#~/.config/nushell/config.n
+source ~/.cache/carapace/init.nu

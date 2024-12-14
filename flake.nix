@@ -138,7 +138,7 @@
           }
           ];
         hosts.vmtest.modules = [
-          (importApply ./test/vmtest.nix { inherit nixos-generators; })
+          (importApply ./test/vm.nix { inherit nixos-generators; })
           {
             home-manager.users.fake.imports = [
               ./home

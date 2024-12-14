@@ -7,21 +7,16 @@
  programs = {
     nushell = {
       enable = true;
-      extraConfig = ''
-        # --------------------
-        # External Completions
-        # --------------------
-        # completions.external.*: Settings related to completing external commands
-        # and additional completers
-
-        $env.config.completions.external.enable = true
-        $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-        mkdir ~/.cache/carapace
-        uwsm-app ${lib.getBin pkgs.carapace}/bin/carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
-        #~/.config/nushell/config.nu
-        source ~/.cache/carapace/init.nu
+      loginFile.text = ''
+        uwsm check may-start;  uwsm select 
+        if $env.LAST_EXIT_CODE == 0 { exec systemd-cat -t uwsm_start uwsm start default }
         '';
       configFile.source = ./config.nu;
+      envFile.text = ''
+        $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+        mkdir ~/.cache/carapace
+        carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+        '';
     };
   };
 }
