@@ -6,6 +6,7 @@
     ./fish.nix
     ./nushell
     ./starship.nix
+    ./kakoune
   ];
 
   xdg.enable = true;
