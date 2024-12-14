@@ -6,7 +6,6 @@
     ./kbd.nix
     ./man-pages.nix
     ./dbus.nix
-    ./mk-fish-default.nix
     ./pipewire-graphical.nix
     ./pipewire.nix
     ./plymouth.nix

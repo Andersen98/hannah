@@ -1,3 +1,3 @@
 {
-  imports = [ ./settings.nix ./registries.nix ];
+  imports = [ ./settings.nix ./registry.nix ];
 }

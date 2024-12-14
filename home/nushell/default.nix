@@ -7,7 +7,7 @@
  programs = {
     nushell = {
       enable = true;
-      configFile.text = ''
+      extraConfig = ''
         # --------------------
         # External Completions
         # --------------------
@@ -21,7 +21,7 @@
         #~/.config/nushell/config.nu
         source ~/.cache/carapace/init.nu
         '';
-      extraConfig.source = ./config.nu;
+      configFile.source = ./config.nu;
     };
   };
 }
