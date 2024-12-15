@@ -2,7 +2,7 @@
 {
   programs.kitty = {
     enable = true;
-    #package = config.lib.nixGL.wrap pkgs.kitty;
+    package = config.lib.nixGL.wrap pkgs.kitty;
 
     shellIntegration.enableFishIntegration = true;
     settings = {
@@ -13,12 +13,11 @@
       background = "#${config.colorScheme.palette.base00}";
       selection_foreground = "#${config.colorScheme.palette.base05}";
       selection_background = "#${config.colorScheme.palette.base02}";
-      #     disable_ligatures = "never";
-      # force_ltr = "no";
+      disable_ligatures = "never";
+      force_ltr = "no";
     };
     font = {
-      package = pkgs.victor-mono;
-      name = "Victor Mono";
+      name = "Victor Mono Nerd Font";
       size = 14;
     };
   };

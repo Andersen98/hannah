@@ -39,8 +39,8 @@
     };
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Victor Mono" "Symbols Nerd Font Mono" ];
-        emoji = [ "Symbols Nerd Font Mono" "Noto Color Emoji" ]; 
+        monospace = [ "Victor Mono Nerd Font" "Noto Sans Symbols 2" "Noto Sans Symbols" ];
+        emoji = [ "Noto Color Emoji" ];
       };
       hinting = {
         style = "none";
@@ -51,8 +51,10 @@
       allowBitmaps = false;
     };
     packages = with pkgs; [
+      noto-sans-symbols-2-font
+      noto-sans-symbols
       nerd-fonts.symbols-only
-      victor-mono
+      nerd-fonts.victor-mono
       fleuron-font
       fira-code
       rakkas-font
