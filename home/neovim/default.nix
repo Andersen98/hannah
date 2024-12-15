@@ -12,7 +12,6 @@
     viAlias = true;
     vimAlias = true;
     enable = true;
-    defaultEditor = true;
     extraLuaConfig = builtins.readFile ./extra-config.lua;
     extraLuaPackages = (ps: with ps; [ luarocks rocks-nvim ]);
     extraPackages = with pkgs; [

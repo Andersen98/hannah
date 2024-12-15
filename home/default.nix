@@ -7,6 +7,7 @@
     ./nushell
     ./starship.nix
     ./kakoune
+    ./helix.nix
   ];
 
   xdg.enable = true;
