@@ -10,6 +10,6 @@ pkgs: {
   vollkorn-font = pkgs.callPackage ./fonts/vollkorn-font.nix { };
   fleuron-font = pkgs.callPackage ./fonts/fleuron-font.nix { };
   noto-sans-symbols-2-font = pkgs.callPackage ./fonts/noto-sans-symbols-2.nix { };
-  noto-sans-symbols-font = pkgs.callPackage ./fonts/noto-sans-symbols-nix { };
+  noto-sans-symbols-font = pkgs.callPackage ./fonts/noto-sans-symbols.nix { };
 
 }

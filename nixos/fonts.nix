@@ -52,7 +52,7 @@
     };
     packages = with pkgs; [
       noto-sans-symbols-2-font
-      noto-sans-symbols
+      noto-sans-symbols-font
       nerd-fonts.symbols-only
       nerd-fonts.victor-mono
       fleuron-font

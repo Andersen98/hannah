@@ -5,9 +5,9 @@
 }:
 
 stdenvNoCC.mkDerivation {
-      pname = "noto-sans-symbols-font";
+      pname = "noto-sans-symbols-2-font";
       version = "1.0.0";
-  src = ./NotoSansSymbols;
+  src = ./NotoSansSymbols2;
   
     unpackPhase = ''
     cd  $src 
@@ -16,7 +16,7 @@ stdenvNoCC.mkDerivation {
       
       installPhase =
         let
-          dirName = "NotoSansSymbols";
+          dirName = "NotoSansSymbols2";
         in
         ''
           runHook preInstall
