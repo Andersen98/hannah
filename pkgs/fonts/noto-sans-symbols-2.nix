@@ -10,9 +10,9 @@ stdenvNoCC.mkDerivation {
   src = ./NotoSansSymbols2;
   
     unpackPhase = ''
-    cd  $src 
     '';
       
+configurePhase = "";
       
       installPhase =
         let
@@ -20,6 +20,7 @@ stdenvNoCC.mkDerivation {
         in
         ''
           runHook preInstall
+          cd $src
           dst_opentype=$out/share/fonts/opentype/${dirName}
           dst_truetype=$out/share/fonts/truetype/${dirName}
 
