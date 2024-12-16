@@ -1,6 +1,7 @@
 {
   imports = [
     ./fhs.nix
+    ./ladybird.nix
     ./fonts.nix
     ./hannah.nix
     ./kbd.nix

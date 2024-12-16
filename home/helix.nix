@@ -1,5 +1,9 @@
 {pkgs,...}:
 {
+  home.packages = with pkgs;[
+    nixfmt-rfc-style
+    nil
+  ];
   programs.helix = {
 
     settings = {
@@ -63,8 +67,7 @@
       language = [
         {name = "nix";
         formatter = {
-            command = "${pkgs.uwsm}/bin/uwsm-app -s a ${pkgs.nil}/bin/nil";
-            args = [ ];
+            command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
           };
                   }
       ];
@@ -73,14 +76,18 @@
         nil = {
           command = "${pkgs.nil}/bin/nil";
           config = {
+           nil = {
+            formatting = { command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";};
             nix = {
-              maxMemoryMB = 6144;
-              flake = {
-                autoArchive = true;
-                autoEvalInputs = true;
-                nixpkgsInputName = "nixpkgs";
-              };
+            maxMemoryMB = 6144;
+            flake = {
+              autoArchive = true;
+              autoEvalInputs = true;
+              nixpkgsInputName = "nixpkgs";
             };
+            };
+            };
+
           };
         };
       };

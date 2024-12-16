@@ -12,15 +12,12 @@
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
-    libfprint-2-tod1-vfs0090
   ];
-services.fprintd ={
+programs.iio-hyprland = {
   enable = true;
-  tod.enable = true;
-  tod.driver = pkgs.libfprint-2-tod1-vfs0090;
-};
-programs.hyprlock.enable = true;
-    programs.uwsm.waylandCompositors = {
+};    
+services.hypridle.enable = true;
+programs.uwsm.waylandCompositors = {
       hyprland = {
       prettyName = "Hyprland";
       comment = "Hyprland compositor managed by UWSM";
