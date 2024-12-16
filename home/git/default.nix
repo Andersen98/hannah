@@ -1,30 +1,18 @@
-{pkgs,...}:{
-  home.packages = with pkgs; [
-    watchman
-    perl
-  ];
+{config,pkgs,...}:{
   programs.git = {
-    package = pkgs.git.overrideAttrs ( 
-      finalAttrs: prevAtts: {
-        buildInputs = prevAtts.buildInputs ++ [  pkgs.makeWrapper ];
-        paths = [ pkgs.perl pkgs.watchman ];
-        preFixup =  ''
-          for f in $(find $out/bin/ $out/libexec/ -type f -executable); do
-            wrapProgram "$f" \
-              --prefix PATH : "${pkgs.perl}/bin/perl" \
-              --prefix PATH : "${pkgs.watchman}/bin/watchman"
-          done
-       '';
-    });
+    package =  pkgs.symlinkJoin {
+  name = "git";
+  paths = [ pkgs.git pkgs.perl pkgs.watchman ];
+  };
     
    
     enable = true;
     extraConfig = {
       core.preloadIndex = true;
-      core.fsmonitor = ".git/hooks/fsmonitor-watchmanv2";
+      core.fsmonitor = "${config.programs.git.hooks.fsmonitor-watchmanv2}";
     };
     hooks = {
-     fsmonitor = ./fsmonitor-watchmanv2;
+     fsmonitor-watchmanv2= ./fsmonitor-watchmanv2;
     };
   };
 }
