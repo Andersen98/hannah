@@ -15,8 +15,9 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
     nix-on-droid = {
       url = "github:t184256/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,7 +70,6 @@
       nix-colors,
       nixgl,
       agenix,
-      nixpkgs-stable,
       nur,
       ...
     }@inputs:
@@ -82,7 +82,6 @@
         inherit self inputs;
         channelsConfig.allowUnfree = true;
         channels.unstable.input = nixpkgs;
-        channels.stable.input = nixpkgs-stable;
 
 
         sharedOverlays =  [
@@ -138,7 +137,7 @@
           }
           ];
         hosts.vmtest.modules = [
-          (importApply ./test/vm.nix { inherit nixos-generators; })
+          (importApply ./hosts/vm { inherit nixos-generators; })
           {
             home-manager.users.fake.imports = [
               ./home

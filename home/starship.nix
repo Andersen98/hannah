@@ -11,6 +11,7 @@
     enableBashIntegration = true;
     # custom settings
     settings = {
+      command_timeout = 2000;
       format = lib.concatStrings [
         "[](#33658A)"
         "$username"

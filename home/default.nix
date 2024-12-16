@@ -1,6 +1,7 @@
 {pkgs,  lib, ...}:
 {
   imports = [
+    ./git
     ./neovim
     ./tmux.nix
     ./fzf.nix

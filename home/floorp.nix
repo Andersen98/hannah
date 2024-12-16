@@ -1,6 +1,12 @@
 {pkgs,...}:
 {
   programs.floorp = {
+    package = pkgs.floorp.override {
+      browser = pkgs.firefox-esr-128;
+      nativeMessegingHosts = [
+        pkgs.tridactyle-native
+      ];
+    };
     enable = true;
     languagePacks = [
       "en-US"

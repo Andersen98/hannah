@@ -9,7 +9,7 @@
     settings = {
       editor = {
         line-number = "relative";
-        shell = ["uwsm-start -s b -- nu" "-c" ];
+        shell = ["${pkgs.nushell}/bin/nu" "-c" ];
         completion-timeout = 100;
         true-color = true;
         undercurl = true;

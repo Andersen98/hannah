@@ -7,6 +7,10 @@
  programs = {
     nushell = {
       enable = true;
+      plugins = with pkgs.nushellPlugins; [
+        dbus
+        formats
+      ];
       loginFile.text = ''
         uwsm check may-start;  uwsm select 
         if $env.LAST_EXIT_CODE == 0 { exec systemd-cat -t uwsm_start uwsm start default }

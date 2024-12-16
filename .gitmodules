@@ -1,0 +1,7 @@
+[submodule "extern/home-manager"]
+	path = extern/home-manager
+	url = https://github.com/nix-community/home-manager
+[submodule "extern/nixpkgs"]
+	path = extern/nixpkgs
+	url = https://github.com/nixos/nixpkgs
+	branch = channels/nixos-unstable
