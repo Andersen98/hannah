@@ -2,6 +2,8 @@
 {
   imports = [
     ./neovim
+    ./tmux.nix
+    ./fzf.nix
     ./bash.nix
     ./fish.nix
     ./nushell

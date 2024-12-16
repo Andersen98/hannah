@@ -1,4 +1,4 @@
-{pkgs,lib,...}:
+{pkgs,...}:
 {
   environment.systemPackages = with pkgs; [
     fnott
@@ -12,13 +12,14 @@
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
+    libfprint-2-tod1-vfs0090
   ];
-  security.pam.services.hyprlock = {};
-    programs.hyprland ={
-      enable = true;
-      withUWSM = true;
-    };
-
+services.fprintd ={
+  enable = true;
+  tod.enable = true;
+  tod.driver = pkgs.libfprint-2-tod1-vfs0090;
+};
+programs.hyprlock.enable = true;
     programs.uwsm.waylandCompositors = {
       hyprland = {
       prettyName = "Hyprland";

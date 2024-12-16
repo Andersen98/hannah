@@ -1,4 +1,4 @@
-{config,pkgs,lib,...}:
+{pkgs,...}:
 {
   programs.helix = {
 
@@ -60,11 +60,19 @@
       "!.gitignore"
     ];
     languages = {
+      language = [
+        {name = "nix";
+        formatter = {
+            command = "${pkgs.uwsm}/bin/uwsm-app -s a ${pkgs.nil}/bin/nil";
+            args = [ ];
+          };
+                  }
+      ];
+      
       language-server = {
         nil = {
           command = "${pkgs.nil}/bin/nil";
           config = {
-            nil.formatting.command = [ "uwsm-app -s b ${pkgs.nixfmt-rfc-style}/bin/nixfmt" ];
             nix = {
               maxMemoryMB = 6144;
               flake = {
