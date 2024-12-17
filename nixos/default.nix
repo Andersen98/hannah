@@ -1,5 +1,6 @@
 {
   imports = [
+    ./monitors-and-brightness.nix
     ./fhs.nix
     ./ladybird.nix
     ./fonts.nix

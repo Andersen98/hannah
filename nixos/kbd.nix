@@ -4,7 +4,7 @@
 }:
 
 {
-
+  services.actkbd.enable = true;
   environment.systemPackages = [
     pkgs.interception-tools
     pkgs.interception-tools-plugins.caps2esc
