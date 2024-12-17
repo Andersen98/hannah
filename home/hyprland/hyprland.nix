@@ -13,10 +13,18 @@
       general = {
         allow_tearing = true;
       };
-      windowrulev2 = [ "immediate, class:^(dolphin-emu)$" ];
+      windowrulev2 = [ 
+      "immediate, class:^(dolphin-emu)$" ];
       misc = {
         vrr = 2;
       };
+      bindm = [
+        
+
+"$mod, mouse:272, movewindow"
+"$mod, Control_L, movewindow"
+"$mod, mouse:273, resizewindow"
+"$mod, ALT_L, resizewindow"         ];
       bind =
         [          # Screenshot a window
           "$mod, PRINT, exec, uwsm-app -s a hyprshot -- -m window"
@@ -28,6 +36,9 @@
           "$mod, Return, exec, uwsm-app -s a -- ${pkgs.kitty}/bin/kitty"
           "$mod, S, exec, uwsm-app -s a -- firefox.desktop:new-window https://search.nixos.org/packages?channel=unstablesort=relevance&type=packages"
           "$mod, E, exec, uwsm-app -s a -- ${pkgs.kitty}/bin/kitty --directory ~/nix-config"
+          "$mod, Q, killactive"
+          "$mod, grave, togglefloating"
+          "$mod, g, fullscreen, 0"
         ]
         ++ (
           # workspaces

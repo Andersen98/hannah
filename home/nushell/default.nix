@@ -10,6 +10,7 @@
       plugins = with pkgs.nushellPlugins; [
         dbus
         formats
+        polars
       ];
       loginFile.text = ''
         uwsm check may-start;  uwsm select 
