@@ -14,7 +14,7 @@
       ];
       loginFile.text = ''
         uwsm check may-start;  uwsm select 
-        if $env.LAST_EXIT_CODE == 0 { with-env {DEBUG: "true"} { exec systemd-cat -t uwsm_start uwsm start default } }
+        if $env.LAST_EXIT_CODE == 0 { with-env {DEBUG: 1} { exec systemd-cat -t uwsm_start uwsm start default } }
         '';
       configFile.source = ./config.nu;
       # def color-scheme-meta-code [] {print "$env.color_scheme = {"; (for $x in 0..15 { $x | into binary | encode hex |str substring --utf-8-bytes 0..1 | into string | "    base" + $in + ":\"#\${config.colorScheme.palette.base" + $in + "}\","  | print $in  } ); print "}"}
