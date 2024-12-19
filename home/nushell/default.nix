@@ -17,9 +17,9 @@
         if $env.LAST_EXIT_CODE == 0 { with-env {DEBUG: 1} { exec systemd-cat -t uwsm_start uwsm start default } }
         '';
       configFile.source = ./config.nu;
-      # def color-scheme-meta-code [] {print "$env.color_scheme = {"; (for $x in 0..15 { $x | into binary | encode hex |str substring --utf-8-bytes 0..1 | into string | "    base" + $in + ":\"#\${config.colorScheme.palette.base" + $in + "}\","  | print $in  } ); print "}"}
+      # def color-scheme-meta-code [] {print "$env.color_scheme_record = {"; (for $x in 0..15 { $x | into binary | encode hex |str substring --utf-8-bytes 0..1 | into string | "    base" + $in + ":\"#\${config.colorScheme.palette.base" + $in + "}\","  | print $in  } ); print "}"}
       envFile.text = ''
-        $env.color_scheme = {
+        $env.color_scheme_record = {
           base00:"#${config.colorScheme.palette.base00}"
           base01:"#${config.colorScheme.palette.base01}"
           base02:"#${config.colorScheme.palette.base02}"
@@ -37,7 +37,6 @@
           base0E:"#${config.colorScheme.palette.base0E}"
           base0F:"#${config.colorScheme.palette.base0F}"
         }
-             config nu --doc | nu-highlight | less -R
         $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
         mkdir ~/.cache/carapace
         carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

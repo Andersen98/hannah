@@ -16,7 +16,6 @@ def make-base16-theme [color_scheme: record] {
   let $base0d = $color_scheme.base0D
   let $base0e = $color_scheme.base0E
   let $base0f = $color_scheme.base0F
-  let $base10 = $color_scheme.base10
   {
     separator: $base03
     leading_trailing_space_bg: $base04
@@ -62,22 +61,17 @@ let config = {
   filesize_metric: true
   table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
   use_ls_colors: true
-  color_config: (make-base16-theme $env.color_scheme_record) <-- this is the theme
+  color_config: (make-base16-theme $env.color_scheme_record)
   use_grid_icons: true
   footer_mode: always #always, never, number_of_rows, auto
-  animate_prompt: false
+  animate_prompt: true
   float_precision: 2
   use_ansi_coloring: true
-  filesize_format: "b" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
-  edit_mode: emacs # vi
-  max_history_size: 10000
+  filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
+  edit_mode: vi # vi
   log_level: error
 }
 
-# ------------------------
-# coloring & themeing
-# ------------------------
-$env.config.table.mode = "with_love"
 # ------------------------
 # History-related settings
 # ------------------------
@@ -92,7 +86,7 @@ $env.config.history.isolation = false
 # ----------------------
 $env.config.show_banner = true
 $env.config.rm.always_trash = true
-$env.config.recursion_limit = 50
+$env.config.recursion_limit = 2000
 
 
 
