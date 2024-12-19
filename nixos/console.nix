@@ -1,12 +1,13 @@
 {pkgs, ...}:
 {
+  fonts.packages = with pkgs; [ spleen ];
   console = {
    packages = with pkgs; [
     spleen
   ];
   earlySetup = true;
 
-    font = "${pkgs.spleen}/share/consolefonts/spleen-32x64.psfu";
+    font = "spleen-16x32";
     };
 boot.loader.systemd-boot.consoleMode = "auto";
 }

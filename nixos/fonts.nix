@@ -48,7 +48,7 @@
       subpixel = {
         lcdfilter = "none";
         };
-      allowBitmaps = false;
+      allowBitmaps = true;
     };
     packages = with pkgs; [
       noto-sans-symbols-2-font
