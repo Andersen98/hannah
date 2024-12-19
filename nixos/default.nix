@@ -1,6 +1,12 @@
 {
   imports = [
+    ./sysrq.nix
     ./monitors-and-brightness.nix
+    ./soteria.nix
+    ./display.nix
+    ./userborn.nix
+    ./buffyboard.nix
+    ./bat.nix
     ./fhs.nix
     ./ladybird.nix
     ./fonts.nix

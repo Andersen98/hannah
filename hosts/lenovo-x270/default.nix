@@ -6,6 +6,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./battery.nix
     ./graphics.nix
     ./ssd.nix
     ./cpu.nix
@@ -30,16 +31,11 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  #console = lib.mkDefault {
-  #  font = "Lat2-Terminus32";
-  #  keyMap = "us";
-  #  useXkbConfig = true; # use xkb.options in tty.
-  #};
 
 # The resolution of the console. 
   boot.loader.systemd-boot.consoleMode = "max";
 # Whether to allow editing the kernel command-line before boot. It is recommended to set this to false, as it allows gaining root access by passing init=/bin/sh as a kernel parameter.
-  boot.loader.systemd-boot.editor = false;
+  boot.loader.systemd-boot.editor = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -82,5 +78,5 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

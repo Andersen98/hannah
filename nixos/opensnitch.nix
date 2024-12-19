@@ -1,7 +1,7 @@
 {pkgs,lib,...}:
 {
 services.opensnitch = {
-  enable = true;
+  enable = false;
   rules = {
     systemd-timesyncd = {
       name = "systemd-timesyncd";

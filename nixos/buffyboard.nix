@@ -1,0 +1,3 @@
+{
+  services.buffyboard.enable = true;
+}

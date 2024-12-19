@@ -1,10 +1,11 @@
 {pkgs, ...}:
 {
-  environment.systemPackages = with pkgs; [
+  console = {
+   packages = with pkgs; [
     spleen
   ];
+  earlySetup = true;
 
-  console = {
-    font = "${pkgs.spleen}/share/consolefonts/spleen-32x64.psfu";
-  };
+    font = "spleen-32x64";
+    };
 }

@@ -18,6 +18,9 @@
       misc = {
         vrr = 2;
       };
+      debug = {
+        disable_logs = false;
+      };
       bindm = [
         
 
