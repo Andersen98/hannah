@@ -4,8 +4,8 @@
    packages = with pkgs; [
     spleen
   ];
-  earlySetup = true;
+#  earlySetup = true;
 
-    font = "spleen-32x64";
+    font = "${pkgs.spleen}/share/consolefonts/spleen-32x64.psfu";
     };
 }
