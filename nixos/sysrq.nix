@@ -1,6 +1,6 @@
 {# https://docs.kernel.org/admin-guide/sysrq.html#what-are-the-command-keys
-
-  boot.kernel.sysctl = {
-    "kernel.sysrq" = 1;
-  };
+#maybe dont mess with this
+  # boot.kernel.sysctl = {
+  #   "kernel.sysrq" = 1;
+  # };
 }

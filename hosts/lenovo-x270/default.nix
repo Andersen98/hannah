@@ -6,12 +6,15 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./battery.nix
     ./graphics.nix
     ./ssd.nix
     ./cpu.nix
   ];
-  boot.kernelModules = [ "acpi_call" ];
+  hardware.display ={
+    edid.enable = true;
+    edid.linuxhw = {AUO226D = ["AUO226D"];};
+    };
+     boot.kernelModules = [ "acpi_call" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
 
   hardware.bluetooth.enable = true;
@@ -32,8 +35,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-# The resolution of the console. 
-  boot.loader.systemd-boot.consoleMode = "max";
 # Whether to allow editing the kernel command-line before boot. It is recommended to set this to false, as it allows gaining root access by passing init=/bin/sh as a kernel parameter.
   boot.loader.systemd-boot.editor = true;
 
@@ -54,7 +55,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
