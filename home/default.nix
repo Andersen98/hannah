@@ -2,6 +2,7 @@
 {
   imports = [
     ./git
+    ./shh
     ./neovim
     ./tmux.nix
     ./fzf.nix

@@ -13,21 +13,32 @@
       general = {
         allow_tearing = true;
       };
+      input = {
+        follow_mouse = 1;
+        off_window_axis_events = 3;
+      };
+      # gestures = {
+      #   workspace_swipe = true;
+      #   workspace_swipe_min_fingers = true;
+      #   workspace_swipe_create_new = false;
+      # };
+#       device = {
+#         name = "synps/2-synaptics-touchpad";
+#           scroll_button = 274;
+# touchpad = {          clickfinger_behavior = true;
+#           drack_lock = true;
+# };        
+#       };
       windowrulev2 = [ 
       "immediate, class:^(dolphin-emu)$" ];
       misc = {
         vrr = 2;
+        # animate_manual_resizes = true;
+        # render_ahead_of_time = true;
       };
       debug = {
         disable_logs = false;
       };
-      bindm = [
-        
-
-"$mod, mouse:272, movewindow"
-"$mod, Control_L, movewindow"
-"$mod, mouse:273, resizewindow"
-"$mod, ALT_L, resizewindow"         ];
       bind =
         [          # Screenshot a window
           "$mod, PRINT, exec, uwsm-app -s a hyprshot -- -m window"
@@ -65,7 +76,8 @@
       binde = , H, resizeactive, -20 0
       binde = , K, resizeactive, 0 20
       binde = , J, resizeactive, 0 -20
-
+      bindm = , Control_L, movewindow
+      bindm = , ALT_L, resizeWindow
       bind = , escape, submap, reset
 
       submap = reset

@@ -13,6 +13,7 @@
     kdePackages.xdg-desktop-portal-kde
     xdg-desktop-portal-gtk
   ];
+security.polkit.enable = true;
 programs.iio-hyprland = {
   enable = true;
 };    

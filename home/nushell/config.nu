@@ -55,22 +55,8 @@ def make-base16-theme [color_scheme: record] {
     shape_custom: {attr: b}
 }}
 
-# now let's apply our regular config settings but also apply the "color_config:" theme that we specified above.
 
-let config = {
-  filesize_metric: true
-  table_mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-  use_ls_colors: true
-  color_config: (make-base16-theme $env.color_scheme_record)
-  use_grid_icons: true
-  footer_mode: always #always, never, number_of_rows, auto
-  animate_prompt: true
-  float_precision: 2
-  use_ansi_coloring: true
-  filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, auto
-  edit_mode: vi # vi
-  log_level: error
-}
+$env.config.color_config = (make-base16-theme $color_scheme_record)
 
 # ------------------------
 # History-related settings

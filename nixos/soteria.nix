@@ -3,5 +3,5 @@
   #https://github.com/ImVaskel/soteria
   # exec-once = /path/to/soteria
   # windowrulev2=pin,class:gay.vaskel.Soteria
-  security.soteria.enable = true;
+  security.soteria.enable = false;
 }

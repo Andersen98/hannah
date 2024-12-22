@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ./inputs.nix
     ./hardware-configuration.nix
     ./graphics.nix
     ./ssd.nix
