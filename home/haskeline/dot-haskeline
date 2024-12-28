@@ -1,0 +1,21 @@
+bellStyle: VisualBell
+maxHistorySize: Just 10000
+editMode: Vi
+completionType: 
+completionPaging: True
+completionPromptLimit: Just 20
+completionType: ListCompletion
+listCompletionsImmediately: True
+historyDuplicates: IgnoreConsecutive
+bind: ctrl-left meta-b
+bind: ctrl-right meta-f
+keyseq: "\ESC[5D" ctrl-left
+keyseq: "\ESC[5C" ctrl-right
+keyseq: xterm-kitty "\ESC[1;5D" ctrl-left
+keyseq: xterm-kitty "\ESC[1;5C" ctrl-right
+bind: { { } left
+bind: ( ( ) left
+bind: [ [ ] left
+bind: } right
+bind: ] right
+bind: ) right

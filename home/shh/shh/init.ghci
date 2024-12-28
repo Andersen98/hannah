@@ -1,5 +1,15 @@
 :seti -XNoOverloadedLists
+:seti -XTemplateHaskell
+:seti -XExtendedDefaultRules
+:seti -XRankNTypes
+:seti -XQuasiQuotes
+:set -XOverloadedStrings
+:set +m
+:set -i
+:set -i/home/hannah/.shh:/home/hannah/playground
 import Shh
 import Shh.Prompt
+import PyF
+import System.FilePath.Glob
 :set prompt-function formatPrompt "\n\ESC[1;32m[%u@%h:%w]λ \ESC[0m"
 :set prompt-cont "| "

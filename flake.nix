@@ -96,7 +96,6 @@
           neovim-nightly-overlay.overlays.default
           neorg-overlay.overlays.default
           utils.overlay
-          nixgl.overlay
           nur.overlays.default
         ]; 
        
@@ -111,22 +110,24 @@
       home-manager.useUserPackages = true;
       home-manager.users.hannah.imports = [
         ./home
-        ./home/extra.nix
-        ./home/extra-extra.nix
         (importApply ./home/flake-inputs.nix  {flake-inputs = inputs; flake-self = self;})
         { colorScheme =  nix-colors.colorSchemes.pandora; }
         {
           home.username = lib.mkDefault "hannah";
           home.homeDirectory = lib.mkDefault "/home/hannah";
         }
+
       ]; 
 }                    
         ];
+
         hosts.lenovo-x270.modules = [
+          ./nixos/graphical
+          ./nixos/mobile
           ./hosts/lenovo-x270
           ({lib,...}:{
-          # farts.notificationDisplayOutput = "eDP-1";
             home-manager.users.hannah = {
+          imports = [./home/graphical.nix];
               programs.plasma.enable = lib.mkForce false;
             };
           })
@@ -158,8 +159,6 @@
           {
             home-manager.users.fake.imports = [
               ./home
-              ./home/extra.nix
-              ./home/extra-extra.nix
               (importApply ./home/flake-inputs.nix  { flake-self = self; flake-inputs = inputs;} )
               { colorScheme =  nix-colors.colorSchemes.pandora; }
               {

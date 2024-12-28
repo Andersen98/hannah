@@ -1,9 +1,18 @@
-{pkgs,...}:
+{pkgs,config,...}:
+let
+  helixRuntimePath = "${config.home.homeDirectory}/hannah/home/helix/runtime";
+  in
 {
   home.packages = with pkgs;[
     nixfmt-rfc-style
     nil
   ];
+  xdg.configFile."helix/runtime"= {
+   source =  config.lib.file.mkOutOfStoreSymlink "${helixRuntimePath}";
+   recursive = true;
+   force = true;
+  };
+
   programs.helix = {
 
     settings = {
@@ -16,6 +25,7 @@
         bufferline = "multiple";
         color-modes = true;
         popup-border = "all";
+        indent-heuristic = "hybrid";
         indent-guides = {
           render = true;
           character = "";

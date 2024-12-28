@@ -1,6 +1,7 @@
-{ config, lib, pkgs,  ... }:
+{ config, lib, pkgs, nixgl, ... }:
 {
   #nixGL.packages = config.dep-inject.flake-inputs.nixgl.packages;
+   nixGL.packages = nixgl.packages;
   nixGL.defaultWrapper = "mesa";
   nixGL.offloadWrapper = "nvidiaPrime";
   nixGL.installScripts = [ "mesa" "nvidiaPrime" ];

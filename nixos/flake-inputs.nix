@@ -10,6 +10,9 @@ let
       plasma-manager.homeManagerModules.plasma-manager
       nix-colors.homeManagerModules.default 
     ];
+    home-manager.extraSpecialArgs = {
+      inherit (flake-inputs) nixgl;
+    };
 
     environment.systemPackages = [ agenix.packages.${pkgs.system}.default ];
   }

@@ -2,6 +2,7 @@
 {
   imports = [
     ./git
+    ./haskeline
     ./shh
     ./neovim
     ./tmux.nix
@@ -11,8 +12,8 @@
     ./nushell
     ./starship.nix
     ./kakoune
-    ./helix.nix
-  ];
+    ./helix
+    ./man.nix  ];
 
   xdg.enable = true;
 
@@ -61,6 +62,9 @@
 
     # internet
     lynx
+    w3m
+    browsh
+    elinks
 
     # archives
     zip

@@ -91,6 +91,14 @@ $env.config.completions.partial = true
 $env.config.completions.use_ls_colors = true
 
 
-
 #~/.config/nushell/config.n
 source ~/.cache/carapace/init.nu
+
+# $env.config.hooks.pre_prompt = { ||
+#     if (pwd|[$in, 'shell.nix']|path join | path exists) {
+#       if (env | find IN_NIX_SHELL | is-empty) {
+#         exec nix-shell  
+#       }
+#     }
+# }
+
