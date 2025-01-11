@@ -145,10 +145,15 @@
         #   services.displayManager.cosmic-greeter.enable = true;
         #   })
         # ];
+
+        
         hosts.x570.modules = [
           ./hosts/x570
+          ./nixos/graphical
           { 
             home-manager.users.hannah = {
+            imports = [ ./home/graphical.nix];
+            programs.plasma.enable = lib.mkForce false;
             wayland.windowManager.hyprland.extraConfig = ''
               cursor:no_hardware_cursors = false
               cursor:allow_dumb_copy = true

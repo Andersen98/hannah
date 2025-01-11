@@ -1,4 +1,6 @@
 {imports =[  ./agenix.nix
+  ./webdav.nix
+  ./firewall.nix
   ./bat.nix
   ./boot.nix
   ./buffyboard.nix
