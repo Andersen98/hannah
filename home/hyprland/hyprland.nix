@@ -46,6 +46,7 @@
           "SUPER_SHIFT, PRINT, exec, uwsm-app -s a hyprshot -- -m region"
  "$mod, P, exec, uwsm-app hyprpicker -- -a -f hex"
           # launch apps
+          "$mod, Z, exec, uwsm-app  -- zeditor"
           "$mod, F, exec, uwsm-app -s a -- firefox.desktop"
           "$mod, Return, exec, uwsm-app -s a -- ${pkgs.kitty}/bin/kitty"
           "$mod, S, exec, uwsm-app -s a -- firefox.desktop:new-window https://search.nixos.org/packages?channel=unstablesort=relevance&type=packages"
