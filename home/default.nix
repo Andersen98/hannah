@@ -2,6 +2,7 @@
 {
   imports = [
     ./git
+    ./zed.nix
     ./haskeline
     ./shh
     ./neovim
