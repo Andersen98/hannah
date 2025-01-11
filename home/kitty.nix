@@ -6,6 +6,7 @@
 
     shellIntegration.enableFishIntegration = true;
     settings = {
+      allow_remote_control = true;
       scrollback_lines = 10000;
       enable_audio_bell = false;
       update_check_interval = 0;

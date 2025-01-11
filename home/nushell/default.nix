@@ -10,7 +10,6 @@
     nushell = {
       enable = true;
       plugins = with pkgs.nushellPlugins; [
-        dbus
         formats
         polars
       ];

@@ -20,7 +20,7 @@
   ./ssh.nix
   ./sysrq.nix
   ./userborn.nix
-  ./wine.nix
+  # ./wine.nix
   ./zen-kernel.nix
 ];
 }

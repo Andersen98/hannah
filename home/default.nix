@@ -3,8 +3,9 @@
   imports = [
     ./git
     ./haskeline
+    ./ihaskell
     ./shh
-    ./neovim
+    # ./neovim
     ./tmux.nix
     ./fzf.nix
     ./bash.nix
